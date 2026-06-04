@@ -1,202 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ObsidianWorld</title>
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI,sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#0f172a,#1e293b);
-color:white;
-min-height:100vh;
-}
-
-header{
-text-align:center;
-padding:40px;
-}
-
-.logo{
-font-size:60px;
-font-weight:900;
-color:#60a5fa;
-text-shadow:0 0 20px #3b82f6;
-}
-
-.subtitle{
-margin-top:10px;
-color:#94a3b8;
-}
-
-.menu{
-margin-top:30px;
-display:flex;
-justify-content:center;
-gap:15px;
-}
-
-.menu button{
-padding:12px 25px;
-border:none;
-border-radius:12px;
-background:#1e293b;
-color:white;
-cursor:pointer;
-transition:.3s;
-}
-
-.menu button:hover{
-background:#3b82f6;
-transform:translateY(-3px);
-}
-
-.title{
-text-align:center;
-margin-top:60px;
-font-size:48px;
-}
-
-.cards{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:25px;
-padding:50px;
-}
-
-.card{
-width:300px;
-height:180px;
-border-radius:20px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-cursor:pointer;
-position:relative;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-}
-
-.owner{
-border:2px solid gold;
-background:rgba(255,215,0,.1);
-}
-
-.right{
-border:2px solid #3b82f6;
-background:rgba(59,130,246,.1);
-}
-
-.deputy{
-border:2px solid #a855f7;
-background:rgba(168,85,247,.1);
-}
-
-.icon{
-font-size:50px;
-}
-
-.name{
-font-size:28px;
-font-weight:bold;
-margin-top:10px;
-}
-
-.tooltip{
-position:absolute;
-bottom:110%;
-left:50%;
-transform:translateX(-50%);
-width:240px;
-background:#111827;
-padding:15px;
-border-radius:15px;
-opacity:0;
-visibility:hidden;
-transition:.3s;
-}
-
-.card:hover .tooltip{
-opacity:1;
-visibility:visible;
-}
-
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.8);
-justify-content:center;
-align-items:center;
-}
-
-.login-box{
-background:#111827;
-padding:30px;
-border-radius:20px;
-width:350px;
-}
-
-.login-box h2{
-text-align:center;
-margin-bottom:20px;
-}
-
-.login-box input{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:none;
-border-radius:10px;
-background:#1e293b;
-color:white;
-}
-
-.login-btn{
-width:100%;
-padding:12px;
-background:#3b82f6;
-border:none;
-border-radius:10px;
-color:white;
-cursor:pointer;
-}
-
-.close{
-float:right;
-cursor:pointer;
-font-size:22px;
-}
-
-#result{
-margin-top:15px;
-text-align:center;
-font-weight:bold;
-}
-
-footer{
-text-align:center;
-padding:30px;
-color:#94a3b8;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
@@ -204,93 +13,27 @@ color:#94a3b8;
 <div class="subtitle">Официальный сайт проекта</div>
 
 <div class="menu">
-<button>Главная</button>
-<button>Правила</button>
-<button onclick="openLogin()">Администрация</button>
+<a href="index.html">Главная</a>
+<a href="rules.html">Правила</a>
+<a href="staff.html">Состав</a>
+<a href="admin.html">Администрация</a>
 </div>
 </header>
 
-<h1 class="title">Администрация проекта</h1>
+<div class="container">
+<div class="card">
+<h2>Добро пожаловать!</h2>
+<p>Добро пожаловать на официальный сайт проекта ObsidianWorld.</p>
+</div>
 
-<div class="cards">
-
-<div class="card owner">
-<div class="icon">👑</div>
-<div class="name">Dark_Army</div>
-
-<div class="tooltip">
-Владелец проекта ObsidianWorld.
+<div class="card">
+<h2>Новости</h2>
+<p>Открытие проекта скоро!</p>
 </div>
 </div>
 
-<div class="card right">
-<div class="icon">⭐</div>
-<div class="name">Ribik</div>
+<footer>© ObsidianWorld</footer>
 
-<div class="tooltip">
-Правая рука владельца проекта.
-</div>
-</div>
-
-<div class="card deputy">
-<div class="icon">🛡️</div>
-<div class="name">Царь Батюшка</div>
-
-<div class="tooltip">
-Заместитель владельца проекта.
-</div>
-</div>
-
-</div>
-
-<div id="loginModal" class="modal">
-<div class="login-box">
-
-<span class="close" onclick="closeLogin()">✖</span>
-
-<h2>Вход в администрацию</h2>
-
-<input type="text" id="nick" placeholder="Ник">
-<input type="password" id="pass" placeholder="Пароль">
-
-<button class="login-btn" onclick="login()">Войти</button>
-
-<div id="result"></div>
-
-</div>
-</div>
-
-<footer>
-© ObsidianWorld
-</footer>
-
-<script>
-function openLogin(){
-document.getElementById("loginModal").style.display="flex";
-}
-
-function closeLogin(){
-document.getElementById("loginModal").style.display="none";
-}
-
-function login(){
-
-let nick=document.getElementById("nick").value;
-let pass=document.getElementById("pass").value;
-
-if(nick==="Dark_Army" && pass==="DarkArmy123"){
-document.getElementById("result").innerHTML="👑 Владелец проекта";
-}
-else if(nick==="Ribik" && pass==="Ribik123"){
-document.getElementById("result").innerHTML="⭐ Правая рука владельца";
-}
-else if(nick==="Царь Батюшка" && pass==="Batyushka123"){
-document.getElementById("result").innerHTML="🛡️ Заместитель владельца";
-}
-else{
-document.getElementById("result").innerHTML="❌ Неверный логин или пароль";
-}
-
-}
-</script>
+</body>
 </html>
+```
