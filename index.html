@@ -1,14 +1,207 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>ObsidianWorld</title>
-</head>
-<body style="background:#111;color:white;text-align:center;font-family:Arial;">
-    <h1>ObsidianWorld</h1>
-    <h2>Добро пожаловать!</h2>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ObsidianWorld</title>
 
-    <button>Новости</button>
-    <button>Администрация</button>
-    <button>Правила</button>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    min-height:100vh;
+}
+
+header{
+    text-align:center;
+    padding:40px;
+}
+
+.logo{
+    font-size:50px;
+    font-weight:900;
+    color:#60a5fa;
+    text-shadow:0 0 20px rgba(96,165,250,.6);
+}
+
+.subtitle{
+    color:#94a3b8;
+    margin-top:10px;
+}
+
+.menu{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+}
+
+.menu button{
+    background:#1e293b;
+    border:none;
+    color:white;
+    padding:12px 24px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.menu button:hover{
+    background:#3b82f6;
+    transform:translateY(-3px);
+}
+
+.title{
+    text-align:center;
+    font-size:40px;
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    padding:20px;
+}
+
+.card{
+    position:relative;
+    width:300px;
+    height:180px;
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    transition:.3s;
+    backdrop-filter:blur(10px);
+}
+
+.owner{
+    background:rgba(255,215,0,.15);
+    border:2px solid gold;
+}
+
+.right{
+    background:rgba(59,130,246,.15);
+    border:2px solid #3b82f6;
+}
+
+.deputy{
+    background:rgba(168,85,247,.15);
+    border:2px solid #a855f7;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.icon{
+    font-size:45px;
+}
+
+.name{
+    margin-top:10px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.tooltip{
+    position:absolute;
+    bottom:110%;
+    left:50%;
+    transform:translateX(-50%);
+    width:260px;
+    background:#111827;
+    border-radius:15px;
+    padding:15px;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+
+.card:hover .tooltip{
+    opacity:1;
+    visibility:visible;
+}
+
+.tooltip h3{
+    margin-bottom:8px;
+}
+
+footer{
+    text-align:center;
+    margin-top:60px;
+    padding:20px;
+    color:#94a3b8;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">OBSIDIANWORLD</div>
+    <div class="subtitle">Официальный сайт проекта</div>
+
+    <div class="menu">
+        <button>Главная</button>
+        <button>Правила</button>
+        <button>Администрация</button>
+    </div>
+</header>
+
+<h1 class="title">Администрация проекта</h1>
+
+<div class="cards">
+
+    <div class="card owner">
+        <div class="icon">👑</div>
+        <div class="name">Dark_Army</div>
+
+        <div class="tooltip">
+            <h3>Владелец</h3>
+            Основатель проекта. Управляет всеми разделами и принимает важные решения.
+        </div>
+    </div>
+
+    <div class="card right">
+        <div class="icon">⭐</div>
+        <div class="name">Ribik</div>
+
+        <div class="tooltip">
+            <h3>Правая рука владельца</h3>
+            Помогает владельцу в развитии проекта и следит за работой команды.
+        </div>
+    </div>
+
+    <div class="card deputy">
+        <div class="icon">🛡</div>
+        <div class="name">Царь Батюшка</div>
+
+        <div class="tooltip">
+            <h3>Заместитель владельца</h3>
+            Следит за порядком и помогает управлять проектом.
+        </div>
+    </div>
+
+</div>
+
+<footer>
+© ObsidianWorld
+</footer>
+
 </body>
 </html>
+```
