@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -11,49 +10,47 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+font-family:Segoe UI,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#0b1020,#111827,#1e293b);
+background:linear-gradient(135deg,#0f172a,#1e293b);
 color:white;
 min-height:100vh;
 }
 
 header{
-padding:40px;
 text-align:center;
+padding:40px;
 }
 
 .logo{
 font-size:60px;
 font-weight:900;
 color:#60a5fa;
-text-shadow:0 0 25px #3b82f6;
+text-shadow:0 0 20px #3b82f6;
 }
 
 .subtitle{
-color:#94a3b8;
 margin-top:10px;
-font-size:18px;
+color:#94a3b8;
 }
 
 .menu{
+margin-top:30px;
 display:flex;
 justify-content:center;
 gap:15px;
-margin-top:30px;
 }
 
 .menu button{
-background:#1e293b;
-border:none;
 padding:12px 25px;
-color:white;
+border:none;
 border-radius:12px;
+background:#1e293b;
+color:white;
 cursor:pointer;
 transition:.3s;
-font-size:16px;
 }
 
 .menu button:hover{
@@ -63,29 +60,28 @@ transform:translateY(-3px);
 
 .title{
 text-align:center;
-font-size:42px;
-margin-top:50px;
-margin-bottom:40px;
+margin-top:60px;
+font-size:48px;
 }
 
 .cards{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-gap:30px;
-padding:20px;
+gap:25px;
+padding:50px;
 }
 
 .card{
-position:relative;
 width:300px;
-height:190px;
+height:180px;
 border-radius:20px;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 cursor:pointer;
+position:relative;
 transition:.3s;
 }
 
@@ -94,18 +90,18 @@ transform:translateY(-10px);
 }
 
 .owner{
-background:rgba(255,215,0,.12);
 border:2px solid gold;
+background:rgba(255,215,0,.1);
 }
 
 .right{
-background:rgba(59,130,246,.12);
 border:2px solid #3b82f6;
+background:rgba(59,130,246,.1);
 }
 
 .deputy{
-background:rgba(168,85,247,.12);
 border:2px solid #a855f7;
+background:rgba(168,85,247,.1);
 }
 
 .icon{
@@ -113,7 +109,7 @@ font-size:50px;
 }
 
 .name{
-font-size:25px;
+font-size:28px;
 font-weight:bold;
 margin-top:10px;
 }
@@ -123,7 +119,7 @@ position:absolute;
 bottom:110%;
 left:50%;
 transform:translateX(-50%);
-width:250px;
+width:240px;
 background:#111827;
 padding:15px;
 border-radius:15px;
@@ -144,18 +140,16 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,.85);
+background:rgba(0,0,0,.8);
 justify-content:center;
 align-items:center;
-z-index:9999;
 }
 
 .login-box{
 background:#111827;
 padding:30px;
 border-radius:20px;
-width:400px;
-box-shadow:0 0 25px rgba(59,130,246,.5);
+width:350px;
 }
 
 .login-box h2{
@@ -176,12 +170,11 @@ color:white;
 .login-btn{
 width:100%;
 padding:12px;
+background:#3b82f6;
 border:none;
 border-radius:10px;
-background:#3b82f6;
 color:white;
 cursor:pointer;
-margin-top:10px;
 }
 
 .close{
@@ -193,12 +186,12 @@ font-size:22px;
 #result{
 margin-top:15px;
 text-align:center;
+font-weight:bold;
 }
 
 footer{
 text-align:center;
 padding:30px;
-margin-top:60px;
 color:#94a3b8;
 }
 </style>
@@ -226,8 +219,7 @@ color:#94a3b8;
 <div class="name">Dark_Army</div>
 
 <div class="tooltip">
-<h3>Владелец</h3>
-Основатель проекта и руководитель.
+Владелец проекта ObsidianWorld.
 </div>
 </div>
 
@@ -236,18 +228,16 @@ color:#94a3b8;
 <div class="name">Ribik</div>
 
 <div class="tooltip">
-<h3>Правая рука</h3>
-Помогает владельцу и развивает проект.
+Правая рука владельца проекта.
 </div>
 </div>
 
 <div class="card deputy">
-<div class="icon">🛡</div>
+<div class="icon">🛡️</div>
 <div class="name">Царь Батюшка</div>
 
 <div class="tooltip">
-<h3>Заместитель</h3>
-Следит за порядком и администрацией.
+Заместитель владельца проекта.
 </div>
 </div>
 
@@ -265,7 +255,7 @@ color:#94a3b8;
 
 <button class="login-btn" onclick="login()">Войти</button>
 
-<p id="result"></p>
+<div id="result"></div>
 
 </div>
 </div>
@@ -289,20 +279,20 @@ let nick=document.getElementById("nick").value;
 let pass=document.getElementById("pass").value;
 
 if(nick==="Dark_Army"){
-document.getElementById("result").innerHTML="👑 Добро пожаловать, Владелец!";
+document.getElementById("result").innerHTML="👑 Владелец проекта";
 }
 else if(nick==="Ribik"){
-document.getElementById("result").innerHTML="⭐ Добро пожаловать, Правая рука!";
+document.getElementById("result").innerHTML="⭐ Правая рука владельца";
 }
 else if(nick==="Царь Батюшка"){
-document.getElementById("result").innerHTML="🛡 Добро пожаловать, Заместитель!";
+document.getElementById("result").innerHTML="🛡️ Заместитель владельца";
 }
 else{
 document.getElementById("result").innerHTML="❌ Пользователь не найден";
 }
+
 }
 </script>
 
 </body>
 </html>
-```
