@@ -278,21 +278,19 @@ function login(){
 let nick=document.getElementById("nick").value;
 let pass=document.getElementById("pass").value;
 
-if(nick==="Dark_Army"){
+if(nick==="Dark_Army" && pass==="DarkArmy123"){
 document.getElementById("result").innerHTML="👑 Владелец проекта";
 }
-else if(nick==="Ribik"){
+else if(nick==="Ribik" && pass==="Ribik123"){
 document.getElementById("result").innerHTML="⭐ Правая рука владельца";
 }
-else if(nick==="Царь Батюшка"){
+else if(nick==="Царь Батюшка" && pass==="Batyushka123"){
 document.getElementById("result").innerHTML="🛡️ Заместитель владельца";
 }
 else{
-document.getElementById("result").innerHTML="❌ Пользователь не найден";
+document.getElementById("result").innerHTML="❌ Неверный логин или пароль";
 }
 
 }
 </script>
-
-</body>
 </html>
