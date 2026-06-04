@@ -8,199 +8,300 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-    color:white;
-    min-height:100vh;
+background:linear-gradient(135deg,#0b1020,#111827,#1e293b);
+color:white;
+min-height:100vh;
 }
 
 header{
-    text-align:center;
-    padding:40px;
+padding:40px;
+text-align:center;
 }
 
 .logo{
-    font-size:50px;
-    font-weight:900;
-    color:#60a5fa;
-    text-shadow:0 0 20px rgba(96,165,250,.6);
+font-size:60px;
+font-weight:900;
+color:#60a5fa;
+text-shadow:0 0 25px #3b82f6;
 }
 
 .subtitle{
-    color:#94a3b8;
-    margin-top:10px;
+color:#94a3b8;
+margin-top:10px;
+font-size:18px;
 }
 
 .menu{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-top:25px;
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:30px;
 }
 
 .menu button{
-    background:#1e293b;
-    border:none;
-    color:white;
-    padding:12px 24px;
-    border-radius:12px;
-    cursor:pointer;
-    transition:.3s;
+background:#1e293b;
+border:none;
+padding:12px 25px;
+color:white;
+border-radius:12px;
+cursor:pointer;
+transition:.3s;
+font-size:16px;
 }
 
 .menu button:hover{
-    background:#3b82f6;
-    transform:translateY(-3px);
+background:#3b82f6;
+transform:translateY(-3px);
 }
 
 .title{
-    text-align:center;
-    font-size:40px;
-    margin-top:40px;
-    margin-bottom:40px;
+text-align:center;
+font-size:42px;
+margin-top:50px;
+margin-bottom:40px;
 }
 
 .cards{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:30px;
-    padding:20px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+padding:20px;
 }
 
 .card{
-    position:relative;
-    width:300px;
-    height:180px;
-    border-radius:20px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    cursor:pointer;
-    transition:.3s;
-    backdrop-filter:blur(10px);
-}
-
-.owner{
-    background:rgba(255,215,0,.15);
-    border:2px solid gold;
-}
-
-.right{
-    background:rgba(59,130,246,.15);
-    border:2px solid #3b82f6;
-}
-
-.deputy{
-    background:rgba(168,85,247,.15);
-    border:2px solid #a855f7;
+position:relative;
+width:300px;
+height:190px;
+border-radius:20px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+transform:translateY(-10px);
+}
+
+.owner{
+background:rgba(255,215,0,.12);
+border:2px solid gold;
+}
+
+.right{
+background:rgba(59,130,246,.12);
+border:2px solid #3b82f6;
+}
+
+.deputy{
+background:rgba(168,85,247,.12);
+border:2px solid #a855f7;
 }
 
 .icon{
-    font-size:45px;
+font-size:50px;
 }
 
 .name{
-    margin-top:10px;
-    font-size:24px;
-    font-weight:bold;
+font-size:25px;
+font-weight:bold;
+margin-top:10px;
 }
 
 .tooltip{
-    position:absolute;
-    bottom:110%;
-    left:50%;
-    transform:translateX(-50%);
-    width:260px;
-    background:#111827;
-    border-radius:15px;
-    padding:15px;
-    opacity:0;
-    visibility:hidden;
-    transition:.3s;
-    box-shadow:0 0 20px rgba(0,0,0,.5);
+position:absolute;
+bottom:110%;
+left:50%;
+transform:translateX(-50%);
+width:250px;
+background:#111827;
+padding:15px;
+border-radius:15px;
+opacity:0;
+visibility:hidden;
+transition:.3s;
 }
 
 .card:hover .tooltip{
-    opacity:1;
-    visibility:visible;
+opacity:1;
+visibility:visible;
 }
 
-.tooltip h3{
-    margin-bottom:8px;
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.login-box{
+background:#111827;
+padding:30px;
+border-radius:20px;
+width:400px;
+box-shadow:0 0 25px rgba(59,130,246,.5);
+}
+
+.login-box h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+.login-box input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+background:#1e293b;
+color:white;
+}
+
+.login-btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#3b82f6;
+color:white;
+cursor:pointer;
+margin-top:10px;
+}
+
+.close{
+float:right;
+cursor:pointer;
+font-size:22px;
+}
+
+#result{
+margin-top:15px;
+text-align:center;
 }
 
 footer{
-    text-align:center;
-    margin-top:60px;
-    padding:20px;
-    color:#94a3b8;
+text-align:center;
+padding:30px;
+margin-top:60px;
+color:#94a3b8;
 }
 </style>
 </head>
+
 <body>
 
 <header>
-    <div class="logo">OBSIDIANWORLD</div>
-    <div class="subtitle">Официальный сайт проекта</div>
+<div class="logo">OBSIDIANWORLD</div>
+<div class="subtitle">Официальный сайт проекта</div>
 
-    <div class="menu">
-        <button>Главная</button>
-        <button>Правила</button>
-        <button onclick="openLogin()">Администрация</button>
-    </div>
+<div class="menu">
+<button>Главная</button>
+<button>Правила</button>
+<button onclick="openLogin()">Администрация</button>
+</div>
 </header>
 
 <h1 class="title">Администрация проекта</h1>
 
 <div class="cards">
 
-    <div class="card owner">
-        <div class="icon">👑</div>
-        <div class="name">Dark_Army</div>
+<div class="card owner">
+<div class="icon">👑</div>
+<div class="name">Dark_Army</div>
 
-        <div class="tooltip">
-            <h3>Владелец</h3>
-            Основатель проекта. Управляет всеми разделами и принимает важные решения.
-        </div>
-    </div>
+<div class="tooltip">
+<h3>Владелец</h3>
+Основатель проекта и руководитель.
+</div>
+</div>
 
-    <div class="card right">
-        <div class="icon">⭐</div>
-        <div class="name">Ribik</div>
+<div class="card right">
+<div class="icon">⭐</div>
+<div class="name">Ribik</div>
 
-        <div class="tooltip">
-            <h3>Правая рука владельца</h3>
-            Помогает владельцу в развитии проекта и следит за работой команды.
-        </div>
-    </div>
+<div class="tooltip">
+<h3>Правая рука</h3>
+Помогает владельцу и развивает проект.
+</div>
+</div>
 
-    <div class="card deputy">
-        <div class="icon">🛡</div>
-        <div class="name">Царь Батюшка</div>
+<div class="card deputy">
+<div class="icon">🛡</div>
+<div class="name">Царь Батюшка</div>
 
-        <div class="tooltip">
-            <h3>Заместитель владельца</h3>
-            Следит за порядком и помогает управлять проектом.
-        </div>
-    </div>
+<div class="tooltip">
+<h3>Заместитель</h3>
+Следит за порядком и администрацией.
+</div>
+</div>
 
+</div>
+
+<div id="loginModal" class="modal">
+<div class="login-box">
+
+<span class="close" onclick="closeLogin()">✖</span>
+
+<h2>Вход в администрацию</h2>
+
+<input type="text" id="nick" placeholder="Ник">
+<input type="password" id="pass" placeholder="Пароль">
+
+<button class="login-btn" onclick="login()">Войти</button>
+
+<p id="result"></p>
+
+</div>
 </div>
 
 <footer>
 © ObsidianWorld
 </footer>
+
+<script>
+function openLogin(){
+document.getElementById("loginModal").style.display="flex";
+}
+
+function closeLogin(){
+document.getElementById("loginModal").style.display="none";
+}
+
+function login(){
+
+let nick=document.getElementById("nick").value;
+let pass=document.getElementById("pass").value;
+
+if(nick==="Dark_Army"){
+document.getElementById("result").innerHTML="👑 Добро пожаловать, Владелец!";
+}
+else if(nick==="Ribik"){
+document.getElementById("result").innerHTML="⭐ Добро пожаловать, Правая рука!";
+}
+else if(nick==="Царь Батюшка"){
+document.getElementById("result").innerHTML="🛡 Добро пожаловать, Заместитель!";
+}
+else{
+document.getElementById("result").innerHTML="❌ Пользователь не найден";
+}
+}
+</script>
 
 </body>
 </html>
